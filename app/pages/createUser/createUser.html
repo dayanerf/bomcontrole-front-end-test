@@ -1,1 +1,53 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<div class= "nav"> </div>
+	<title>Formulário de Cadastro </title>
+</head>
+<body>
+	<h2> Preencha os campos abaixo:</h2>
+	<form name="Cadastro">
+	<legend>Dados pessoais</legend>	
+	<fieldset>
+		<label for="nome">Nome</label>
+		<input id ="nome" type="text" name="nome" required="" placeholder="Seu nome aqui!" autofocus>
+		<label for="Nascimento">Data de Nascimento</label>
+		<input id= "Nascimento"type="date" name="Nascimento" required="">
+		<label>
+			<input type="radio" name="sexo" value="Feminino" checked=""> Feminino 
+		</label>
+		<label>
+			<input type="radio" name="sexo" value="Masculino"> Masculino
+		</label>
+		<label for="cpf">CPF</label>
+		<input id="cpf" type="number" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+			   placeholder="100.100.100-00" required>
+		<div class=" alerta"> </div>
+    </fieldset>
+    <legend>Contato</legend>
+    <fieldset>
+		<label for="email">E-mail</label>
+		<input id="email" type="email" name="email" required="" placeholder="exemplo@exemplo.com">
+		<label for="telefone">Telefone</label>
+		<input id="telefone" type="tel" name="telefone"
+			   pattern="^\d{2}-\d{4}-\d{4}$" required placeholder="(00) 0000-0000" >
+		<label for="cel">Celular</label>
+		<input id="cel" type="tel" name="celular" 
+			   pattern="\d{2}\-\d{5}\-\d{4}" placeholder="(11)99999-9999">
+	</fieldset>
+	<legend>Endereço</legend>
+	<fieldset>
+		<label for="end">Lougradouro</label>
+		<input id="end" type="text" name="end">
+	</fieldset>
+
+	<button id="enviar" type="submit"> Enviar</button>
+
+
+<script src="app/pages/navigation/navigation.js"></script>
+<script src="app/pages/createUser/createUserController.js"></script>
+
+
+</html>
+
+	

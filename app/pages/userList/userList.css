@@ -1,0 +1,22 @@
+.jumbotron{
+	width: auto;
+	padding-top:40px;
+	text-align: center;
+	 background: transparent;
+	padding: : 20px; 
+}
+.table-hover{
+	width: auto;
+}
+.selecionado{
+	 background-color: #E2D1CE;
+	 font-weight: bold;
+
+}
+.btn-danger{
+	margin: 20px;
+
+}
+.form-control{
+	width: 400px;
+}
