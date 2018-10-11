@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app= "bomControle">
+<link rel="stylesheet" type="text/css" href="app/pages/createUser/createUser.css">
+<script src="app/pages/navigation/navigation.js"></script>
+<script src="app/pages/createUser/createUserController.js"></script>
+<script src="app/filters/filters.js"></script>
 <head>
 	<div class= "nav"> </div>
 	<title>Formulário de Cadastro </title>
 </head>
-<body>
-	<h2> Preencha os campos abaixo:</h2>
-	<form name="Cadastro">
-	<legend>Dados pessoais</legend>	
-	<fieldset>
-		<label for="nome">Nome</label>
-		<input id ="nome" type="text" name="nome" required="" placeholder="Seu nome aqui!" autofocus>
-		<label for="Nascimento">Data de Nascimento</label>
-		<input id= "Nascimento"type="date" name="Nascimento" required="">
-		<label>
-			<input type="radio" name="sexo" value="Feminino" checked=""> Feminino 
-		</label>
-		<label>
-			<input type="radio" name="sexo" value="Masculino"> Masculino
-		</label>
-		<label for="cpf">CPF</label>
-		<input id="cpf" type="number" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-			   placeholder="100.100.100-00" required>
-		<div class=" alerta"> </div>
-    </fieldset>
-    <legend>Contato</legend>
-    <fieldset>
-		<label for="email">E-mail</label>
-		<input id="email" type="email" name="email" required="" placeholder="exemplo@exemplo.com">
-		<label for="telefone">Telefone</label>
-		<input id="telefone" type="tel" name="telefone"
-			   pattern="^\d{2}-\d{4}-\d{4}$" required placeholder="(00) 0000-0000" >
-		<label for="cel">Celular</label>
-		<input id="cel" type="tel" name="celular" 
-			   pattern="\d{2}\-\d{5}\-\d{4}" placeholder="(11)99999-9999">
-	</fieldset>
-	<legend>Endereço</legend>
-	<fieldset>
-		<label for="end">Lougradouro</label>
-		<input id="end" type="text" name="end">
-	</fieldset>
-
-	<button id="enviar" type="submit"> Enviar</button>
-
-
-<script src="app/pages/navigation/navigation.js"></script>
-<script src="app/pages/createUser/createUserController.js"></script>
-
-
+	<body ng-controller= "createUserController">
+		<div class="jumbotron">	
+			<form name="cadastroForm">
+				<legend>Dados pessoais</legend>
+				<fieldset>
+				<label>Nome</label>	
+				<input class="form-control" type="text" name="nome" required>
+				<label>Nascimento</label>
+				<input class="form-control" type="date" name="nasc" required>
+				<label><input type="radio" name="sex" value="Feminino" checked> Feminino</label>
+				<label><input type="radio" name="sex" value="Masculino">Masculino</label>
+				<label>CPF</label>>
+				<input class="form-control" type="number" name="cpf" required placeholder="400.000.400-40">
+				<label>Email</label>
+				<input class="form-control" type="email" name="email" required placeholder="email@exemplo.com">
+				<label>Telefone</label>
+				<input class="form-control" type="tel" name="telefone"required placeholder="(xx) 4545-4545">
+				<label>Celular</label>
+				<input class="form-control" type="tel" name="celular" placeholder="(XX) 99999-9999">
+				</fieldset>
+				<legend>Endereço</legend>
+				<fieldset class="endereco">
+				<input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
+				<input class="form-control" type="number" name="cep" placeholder="09000-000">
+				<input class="form-control" type="number" name="numero" placeholder="Nº">
+				<input class="form-control" type="text" name="bairro" placeholder="Bairro">
+				</fieldset>
+			<button class="btn btn-primary" type="submit">Enviar</button>
+			</form>
+		
+	
+		</div>	
+	</body>
 </html>
 
 	

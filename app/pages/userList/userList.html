@@ -11,8 +11,8 @@
 	<div class="jumbotron"> 
 
 		<h3 class= "display-4">Tabela de usuários</h3>
- <input class="form-control" type="text" ng-model="busca" placeholder="busca">
-<table class= "table">
+ <input class="form-control" type="text" ng-model="buscar" placeholder="busca">
+<table class= "table" >
 	<thead class = "thead-light">
 		<tr>
 			<th></th>
@@ -26,14 +26,14 @@
 
 	</thead>
 <tbody>
-	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in list | filter: busca | orderBy:'name': false " >
+	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in list | filter:buscar| orderBy:'name': false " >
 		<td><input type="checkbox" ng-model ="user.selecionado"/></td>
 		<td>{{user.name}}</td>
 		<td>{{user.dateBirth}}</td>
 		<td>{{user.sex}}</td>
-		<td>{{user.cpf}}</td>
+		<td>{{user.cpf | cpf}}</td>
 		<td>{{user.email}}</td>
-		<td>{{user.phone}}</td>		
+		<td>{{user.phone | telefone}}</td>		
 	</tr>
 </tbody>
 </div>
