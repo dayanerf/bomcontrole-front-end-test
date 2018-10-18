@@ -8,6 +8,7 @@
                 templateUrl: 'app/pages/userList/userList.html',
                 controller: 'userListController',
             });
+       
 
     }]);
 })();

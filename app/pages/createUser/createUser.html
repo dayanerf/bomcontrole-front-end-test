@@ -3,42 +3,75 @@
 <link rel="stylesheet" type="text/css" href="app/pages/createUser/createUser.css">
 <script src="app/pages/navigation/navigation.js"></script>
 <script src="app/pages/createUser/createUserController.js"></script>
+<script src="app/services/http/userHttpServices.js"></script>
 <script src="app/filters/filters.js"></script>
+
 <head>
 	<div class= "nav"> </div>
 	<title>Formulário de Cadastro </title>
 </head>
 	<body ng-controller= "createUserController">
-		<div class="jumbotron">	
-			<form name="cadastroForm">
-				<legend>Dados pessoais</legend>
-				<fieldset>
-				<label>Nome</label>	
-				<input class="form-control" type="text" name="nome" required>
-				<label>Nascimento</label>
-				<input class="form-control" type="date" name="nasc" required>
-				<label><input type="radio" name="sex" value="Feminino" checked> Feminino</label>
-				<label><input type="radio" name="sex" value="Masculino">Masculino</label>
-				<label>CPF</label>>
-				<input class="form-control" type="number" name="cpf" required placeholder="400.000.400-40">
-				<label>Email</label>
-				<input class="form-control" type="email" name="email" required placeholder="email@exemplo.com">
-				<label>Telefone</label>
-				<input class="form-control" type="tel" name="telefone"required placeholder="(xx) 4545-4545">
-				<label>Celular</label>
-				<input class="form-control" type="tel" name="celular" placeholder="(XX) 99999-9999">
-				</fieldset>
-				<legend>Endereço</legend>
-				<fieldset class="endereco">
-				<input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
-				<input class="form-control" type="number" name="cep" placeholder="09000-000">
-				<input class="form-control" type="number" name="numero" placeholder="Nº">
-				<input class="form-control" type="text" name="bairro" placeholder="Bairro">
-				</fieldset>
-			<button class="btn btn-primary" type="submit">Enviar</button>
-			</form>
-		
-	
+		<div class="jumbotron">
+			<form name="cadastroForm" class="form-horizontal">
+				<legend>Cadastro de usuário</legend>		
+					<fieldset>
+							<div  class="form-group">
+								<label class="control-label col-sm-2" >Nome</label>	
+								<input class="form-control"  type="text" name="nome" ng-required="true" ng-model="user.nome">
+							</div>
+							<div class="form-group">		
+								<label  class="control-label col-sm-2" >Nascimento</label>
+								<input class="form-control" type="date"name="nasc" ng-required="true" ng-model="user.nascimento">
+							</div>	
+								<fieldset>	
+							<div class="col-sm-offset-2 col-sm-10">
+								<label>
+								<input type="radio" name="sex" value="Feminino" checked ng-model="user.sexo"> Feminino
+								</label>
+								<label >
+									<input type="radio" name="sex" value="Masculino" ng-model="user.sexo">Masculino
+								</label>
+							</div>		
+							</fieldset>	
+							<div class="form-group">
+								<label class="control-label col-sm-2" >CPF</label>
+								<input class="form-control" type="text" name="Cpf" ng-required="true" ng-model="user.Cpf" ui-br-cpf-mask>
+							</div>
+							<div class="form-group">	
+								<label class="control-label col-sm-2">Email</label>
+								<input class="form-control"  type="email" name="email" ng-required="true"  ng-model="user.Email" placeholder="email@exemplo.com">
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" >Telefone</label>
+								<input class="form-control" type="tel" name="telefone"ng-required="true" placeholder="(99)9999-9999"  ng-model="user.Telefone"  ui-br-phone-number>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">Celular</label>
+								<input class="form-control" type="tel" name="celular" placeholder="(99) 99999-9999" ng-model="user.Celular" ui-br-phone-number>
+							</div>
+							</fieldset>	
+						
+							<fieldset>
+							<div class="form-group">
+								<label class="control-label col-sm-2">Endereço</label>	
+								<input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
+							</div>
+							<div class="form-group">
+								<label  class="control-label col-sm-2">CEP</label>
+								<input class="form-control" type="text" name="cep" placeholder="09000-000" ng-model="user.Cep" ui-br-cep-mask>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">Número</label>
+								<input class="form-control" type="number" name="numero" placeholder="Nº">
+							</div>
+							<div class="form-group">	
+								<label class="control-label col-sm-2">Bairro</label>
+								<input class="form-control" type="text" name="bairro" placeholder="Bairro">
+							</div>
+							</fieldset>
+					<button class="btn btn-primary" type="submit" ng-model ="adicionar" ng-disabled ="cadastroForm.$invalid" ng-click ="adicionar()">Cadastrar</button>
+			
+				</form>
 		</div>	
 	</body>
 </html>

@@ -1,5 +1,4 @@
-(function () {
-    "use strict";
+
     angular.module('bomControle')
         .factory('userHttpServices', ['$http', 'config', function ($http) {
 
@@ -13,10 +12,19 @@
                 });
             };
 
+        
+            var _adicionar = function (user) {
+                list.push(user);
+                    
+            }
+            
+    
             return {
-                getUsers: _getUsers
+                getUsers: _getUsers,
+                adicionar: _adicionar
+                
+                
             };
 
         }]);
 
-})();

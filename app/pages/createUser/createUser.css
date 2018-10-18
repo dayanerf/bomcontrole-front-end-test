@@ -1,15 +1,10 @@
 .form-control{
-	width: 400px;
-	height: 40px
-
+	width: 50%;
 }
-
-.subtitle{
-	margin-bottom: 20px;
-	margin-top: : 20px;
-
+.jumbotron{
+	margin-top: 25px;
+	background-color: transparent;
 }
 .btn-primary{
-margin-top: 20px;
-
+	margin-left: 312px;
 }
