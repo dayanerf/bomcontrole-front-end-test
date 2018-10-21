@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html ng-app= "bomControle" lang="pt-BR">
 <link rel="stylesheet" type="text/css" href="app/pages/createUser/createUser.css">
-<script src="app/pages/navigation/navigation.js"></script>
 <script src="app/pages/createUser/createUserController.js"></script>
-<script src="app/services/http/userHttpServices.js"></script>
-<script src="app/filters/filters.js"></script>
+
 
 <head>
-	<div class= "nav"> </div>
 	<title>Formulário de Cadastro </title>
 </head>
 	<body ng-controller= "createUserController">
@@ -21,7 +18,7 @@
 							</div>
 							<div class="form-group">		
 								<label  class="control-label col-sm-2" >Nascimento</label>
-								<input class="form-control" type="text"name="nasc" ng-required="true" ng-model="user.dateBirth" ui-date-mask="DD-MM-YYYY" parse>
+								<input class="form-control" type="text"name="nasc" ng-required="true" ng-model="user.dateBirth" ui-date-mask="dd-MM-yyyy" >
 							</div>	
 								<fieldset>	
 							<div class="col-sm-offset-2 col-sm-10">

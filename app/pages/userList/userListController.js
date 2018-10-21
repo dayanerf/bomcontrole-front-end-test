@@ -1,6 +1,6 @@
 
     angular.module('bomControle')
-        .controller('userListController',['$scope','$rootScope', function ($scope,$rootScope) 
+        .controller('userListController',['$scope','$rootScope','$location', function ($scope,$rootScope,$location) 
         {
 			
 		
@@ -10,11 +10,10 @@
        			$rootScope.list =list.filter(function(user){
        				if(!user.selecionado) return user;
 				   });
-			$scope.isSelecionado = function () {
-			
 			}
 
+			$scope.voltar =function(){
+				$location.path('/create-user');
 			}
-			
        	}]);   
 

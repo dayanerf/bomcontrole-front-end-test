@@ -24,7 +24,18 @@
         return function (text) {
           return text ? String(text).replace(/^(\d{5})(\d{3})/, "$1-$2") : '';
         };
-    }]);
+    }])
+
+    .filter('nome', [function () {
+      return function (input) {
+        var listaDeNome  = input.split("");
+        var nomeFormatado = listaDeNome.map(function(name){
+          return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
+        });
+      console.log(nomeFormatado);
+      return input;
+      };
+  }]);
 
  
 })();
