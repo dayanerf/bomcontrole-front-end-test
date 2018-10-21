@@ -1,7 +1,7 @@
 
     angular.module('bomControle')
         .factory('userHttpServices', ['$http', 'config', function ($http) {
-
+            
             var _getUsers = function () {
                 return $http({
                     method: 'GET',
@@ -11,20 +11,10 @@
                     },
                 });
             };
-
-        
-            var _adicionar = function (user) {
-                list.push(user);
-                    
-            }
-            
-    
             return {
-                getUsers: _getUsers,
-                adicionar: _adicionar
+                getUsers: _getUsers
                 
-                
+             
             };
-
         }]);
 

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="bomControle">
+<html ng-app="bomControle" lang="pt-BR">
 <script src="app/pages/navigation/navigation.js"></script>
 <script src="app/services/http/userHttpServices.js"></script>
 <link rel="stylesheet" type="text/css" href="app/pages/userList/userList.css">
+<script src="app/filters/filters.js"></script>
 <head>
 	<div class="nav"></div>
 	<title>Tabela User</title>
@@ -29,7 +30,7 @@
 	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in list | filter:buscar| orderBy:'name': false " >
 		<td><input type="checkbox" ng-model ="user.selecionado"/></td>
 		<td>{{user.name}}</td>
-		<td>{{user.dateBirth}}</td>
+		<td>{{user.dateBirth | date:'dd/MM/AAAA'}}</td>
 		<td>{{user.sex}}</td>
 		<td>{{user.cpf | cpf}}</td>
 		<td>{{user.email}}</td>
