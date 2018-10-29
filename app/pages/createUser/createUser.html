@@ -1,76 +1,88 @@
-<!DOCTYPE html>
-<html ng-app= "bomControle" lang="pt-BR">
-<link rel="stylesheet" type="text/css" href="app/pages/createUser/createUser.css">
-<script src="app/pages/createUser/createUserController.js"></script>
+<div class="jumbotron">
+	<div class="form-group">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form name="cadastroForm">
+						<legend>Cadastro de usuário</legend>
+						<fieldset>
+							<div class="col-sm-12">
+								<label>Nome</label>
+								<input class="form-control" type="text" id="nome" name="nome" ng-required="true" ng-model="user.name"
+								 ng-minlength="5" min="5">
+							</div>
+							<div class="col-sm-6">
+								<label class="control-label">Nascimento</label>
+								<input class="form-control" type="text" name="nasc" ng-required="true" ng-model="user.dateBirth" ui-date-mask="DD/MM/YYYY">
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group checkbox-genero">
+									<label class="control-label col-sm-2">
+										<input type="radio" name="sex" value="Female" ng-model="user.sex" checked> Feminino
+									</label>
+									<label class="control-label col-sm-2">
+										<input type="radio" name="sex" value="Male" ng-model="user.sex">Masculino
+									</label>
+								</div>
+							</div>
 
+							<!-- <div class="form-group">
+					<label class="control-label col-sm-2">Nascimento</label>
+					<input class="form-control" type="text" name="nasc" ng-required="true" ng-model="user.dateBirth" ui-date-mask="DD/MM/YYYY">
+				</div> -->
+							<!-- <fieldset>
+					<div class="form-group checkbox-genero">
+						<label class="control-label col-sm-2">
+							<input type="radio" name="sex" value="Female" ng-model="user.sex" checked> Feminino
+						</label>
+						<label class="control-label col-sm-2">
+							<input type="radio" name="sex" value="Male" ng-model="user.sex">Masculino
+						</label>
+					</div>
+				</fieldset> -->
+							<!-- <div class="form-group">
+					<label class="control-label col-sm-2">CPF</label>
+					<input class="form-control" type="text" name="Cpf" ng-required="true" ng-model="user.cpf" ui-br-cpf-mask>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Email</label>
+					<input class="form-control" type="email" name="email" ng-required="true" ng-model="user.email" placeholder="email@exemplo.com">
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Telefone</label>
+					<input class="form-control" type="tel" name="telefone" ng-required="true" placeholder="(99)9999-9999" ng-model="user.phone"
+					 ui-br-phone-number>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Celular</label>
+					<input class="form-control" type="tel" name="celular" placeholder="(99) 99999-9999" ng-model="user.Celular"
+					 ui-br-phone-number>
+				</div> -->
+						</fieldset>
 
-<head>
-	<title>Formulário de Cadastro </title>
-</head>
-	<body ng-controller= "createUserController">
-		<div class="jumbotron">
-			<form name="cadastroForm" class="form-horizontal">
-				<legend>Cadastro de usuário</legend>		
-					<fieldset>
-							<div  class="form-group">
-								<label class="control-label col-sm-2" >Nome</label>	
-								<input class="form-control"  type="text" name="nome" ng-required="true" ng-model="user.name">
-							</div>
-							<div class="form-group">		
-								<label  class="control-label col-sm-2" >Nascimento</label>
-								<input class="form-control" type="text"name="nasc" ng-required="true" ng-model="user.dateBirth" ui-date-mask="dd-MM-yyyy" >
-							</div>	
-								<fieldset>	
-							<div class="col-sm-offset-2 col-sm-10">
-								<label>
-								<input type="radio" name="sex" value="Female" checked ng-model="user.sex"> Feminino
-								</label>
-								<label >
-									<input type="radio" name="sex" value="Male" ng-model="user.sex">Masculino
-								</label>
-							</div>		
-							</fieldset>	
-							<div class="form-group">
-								<label class="control-label col-sm-2" >CPF</label>
-								<input class="form-control" type="text" name="Cpf" ng-required="true" ng-model="user.cpf" ui-br-cpf-mask>
-							</div>
-							<div class="form-group">	
-								<label class="control-label col-sm-2">Email</label>
-								<input class="form-control"  type="email" name="email" ng-required="true"  ng-model="user.email" placeholder="email@exemplo.com">
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-2" >Telefone</label>
-								<input class="form-control" type="tel" name="telefone"ng-required="true" placeholder="(99)9999-9999"  ng-model="user.phone"  ui-br-phone-number>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-2">Celular</label>
-								<input class="form-control" type="tel" name="celular" placeholder="(99) 99999-9999" ng-model="user.Celular" ui-br-phone-number>
-							</div>
-							</fieldset>	
-						
-							<fieldset>
-							<div class="form-group">
-								<label class="control-label col-sm-2">Endereço</label>	
-								<input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
-							</div>
-							<div class="form-group">
-								<label  class="control-label col-sm-2">CEP</label>
-								<input class="form-control" type="text" name="cep" placeholder="09000-000" ng-model="user.cep" ui-br-cep-mask>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-2">Número</label>
-								<input class="form-control" type="number" name="numero" placeholder="Nº">
-							</div>
-							<div class="form-group">	
-								<label class="control-label col-sm-2">Bairro</label>
-								<input class="form-control" type="text" name="bairro" placeholder="Bairro">
-							</div>
-							</fieldset>
-					<button class="btn btn-primary" type="button" ng-model ="adicionar" ng-disabled ="cadastroForm.$invalid" ng-click ="salvar(user)">Cadastrar</button>
-			{{user}}
-				</form>
-		</div>	
-	</body>
-</html>
-
-	
+						<!-- <fieldset>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Endereço</label>
+					<input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">CEP</label>
+					<input class="form-control" type="text" name="cep" placeholder="09000-000" ng-model="user.cep" ui-br-cep-mask>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Número</label>
+					<input class="form-control" type="number" name="numero" placeholder="Nº">
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Bairro</label>
+					<input class="form-control" type="text" name="bairro" placeholder="Bairro">
+				</div>
+			</fieldset> -->
+						<button class="btn btn-primary" type="button" ng-model="adicionar" ng-click="salvar(user)" ng-disabled="cadastroForm.$invalid">Cadastrar</button>
+						{{user}}
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

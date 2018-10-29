@@ -25,7 +25,7 @@
 
 	</thead>
 <tbody>
-	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in list | filter:buscar| orderBy:'name': false " >
+	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in listaUsuarios | filter:buscar| orderBy:'name': false " >
 		<td><input type="checkbox" ng-model ="user.selecionado"/></td>
 		<td>{{user.name | nome }}</td>
 		<td>{{user.dateBirth | date:'dd/MM/yyyy'}}</td>
@@ -35,7 +35,7 @@
 		<td>{{user.phone | telefone}}</td>	
 		</td>
 	</tr>
-	<button class="btn btn-danger " ng-click= "apagarUser(list)" ng-disable= "isSelecionado(list)">Apagar</button>
+	<button class="btn btn-danger " ng-click= "apagarUser(listaUsuarios)" ng-disable= "isSelecionado(listaUsuarios)">Apagar</button>
 	<button class="btn btn-primary" ng-click="voltar()"> Voltar </button>
 </tbody>
 </div>

@@ -1,0 +1,14 @@
+form .ng-dirty.ng-invalid {
+    border-color: #a94442;
+    color: #a94442;
+}
+
+form .ng-dirty.ng-valid {
+    border-color: #3c763d;
+    color: #3c763d;
+}
+
+form .no-validate {
+    border: 1px solid #222 !important;
+    color: #222 !important;
+}

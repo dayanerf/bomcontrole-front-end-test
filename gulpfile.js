@@ -14,6 +14,7 @@ var paths = {
     './node_modules/bootstrap/dist/css/bootstrap.css',
     './node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
     './node_modules/bootstrap-daterangepicker/daterangepicker.css',
+    './app/**/**/**/*.css',
   ],
   appDependencesJs: [
     './node_modules/jquery/dist/jquery.js',
@@ -29,6 +30,7 @@ var paths = {
     './node_modules/ui-select/dist/select.js',
     './node_modules/angular-input-masks/releases/angular-input-masks-standalone.js',
     './node_modules/angular-ui-notification/dist/angular-ui-notification.js',
+    
   ],
   appJs: [
     './app/app.js',
@@ -74,7 +76,7 @@ $.gulp.task('serve', [
 
   $.gulp.watch(paths.appJs, ['concat-app-js']);
   $.gulp.watch('./public/js/app.js', ['browser-sync-reload']);
-  $.gulp.watch('./app/**/**/**/*.css', ['browser-sync-reload']);
+  $.gulp.watch('./app/**/**/**/*.css', ['concat-dependences-css', 'browser-sync-reload']);
 
   $.gulp.watch(paths.appHtml, ['browser-sync-reload']);
 
