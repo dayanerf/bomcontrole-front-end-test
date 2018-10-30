@@ -1,22 +1,31 @@
-/* .jumbotron{
-	width: auto;
-	padding-top:40px;
-	text-align: center;
-	 background: transparent;
-	padding: : 20px; 
+.jumbotron{
+ background: transparent;
 }
-.table-hover{
-	width: auto;
-}
+
 .selecionado{
 	 background-color: #E2D1CE;
 	 font-weight: bold;
-
 }
 .btn-danger{
 	margin: 20px;
+}
+
+
+
+.panel-primary{
+
+margin-left: 40px;
+margin-right: 40px;
+margin-top: 20px;
+}
+
+.busca{
+	margin-top: 15px;
+	margin-left: 40px;
+}
+
+.btn-primary{
+
+	margin-top: 15px;
 
 }
-.form-control{
-	width: 400px;
-} */

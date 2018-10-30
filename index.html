@@ -15,16 +15,16 @@
 
   <link rel="stylesheet" href="public/css/dependences.css">
   <link rel="stylesheet" href="app/pages/testeFrontEnd/testeFrontEnd.css">
-  <div menu-principal></div>
+  <div ng-include="'app/pages/navigation/nav.html'"></div>
 </head>
 
 <body>
+  <!-- <div menu-principal></div> -->
   <bc-header></bc-header>
   <ng-view></ng-view>
 
   <script src="public/js/dependences.js"></script>
   <script src="public/js/app.js"></script>
-  <script src="app/directives/menuPrincipalDirective.js"></script>
 
 
 

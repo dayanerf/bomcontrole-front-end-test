@@ -1,10 +1,21 @@
-/* .form-control{
-	width: 50%;
+
+form .ng-dirty.ng-invalid {
+    border-color: #a94442;
+    color: #a94442;
 }
-.jumbotron{
+
+form .ng-dirty.ng-valid {
+    border-color: #3c763d;
+    color: #3c763d;
+}
+
+form .no-validate {
+    border: 1px solid #222 !important;
+    color: #222 !important;
+}
+
+.checkbox-genero{
 	margin-top: 25px;
-	background-color: transparent;
+	margin-left: 55px;
+	margin-right: 0;
 }
-.btn-primary{
-	margin-left: 312px;
-} */

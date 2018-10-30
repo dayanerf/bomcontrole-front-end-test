@@ -1,44 +1,48 @@
-<!DOCTYPE html>
-<html ng-app="bomControle" lang="pt-BR">
-<link rel="stylesheet" type="text/css" href="app/pages/userList/userList.css">
-<script src="app/filters/filters.js"></script>
+<div class="jumbotron">
+	<fieldset>
+		<div class="busca col-sm-4">
+			<input class="form-control" type="text" ng-model="buscar" placeholder="busca">
+		</div>
+		<div> 
+			<button class="btn btn-primary" ng-click="novoCadastro()"> Novo cadastro </button>
+			<button class="btn btn-primary" ng-click="resetUsuarios()">Reset</button>
+		</div>
+	</fieldset>
+	<div class="panel panel-primary">
+		<div class="panel-heading">Lista de Usuários </div>
+		<table class="table ">
+			<thead>
+				<tr>
+					<th></th>
+					<th scope="col">Nome</th>
+					<th scope="col">Aniversario</th>
+					<th scope="col">Sexo</th>
+					<th scope="col">CPF</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Telefone</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in listaUsuarios| filter: buscar">
+					<td></td>
+					<td>{{user.name}}</td>
+					<td>{{user.dateBirth | date:'dd/MM/yyyy'}}</td>
+					<td>{{user.sex}}</td>
+					<td>{{user.cpf | cpf}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.phone | telefone}}</td>
+					<td>
+						<button type="button" class="btn btn-default" aria-label="true" ng-click="apagarUser($index)" ng-disable="isSelecionado(listaUsuarios)">
+							<i class="glyphicon glyphicon-remove"></i>
+						</button>
 
-<head>
-	<title>Tabela User</title>
-</head>
-<body ng-controller ="userListController">
-	<div class="jumbotron"> 
+					</td>
+				</tr>
 
-		<h3 class= "display-4">Tabela de usuários</h3>
- <input class="form-control" type="text" ng-model="buscar" placeholder="busca">
-<table class= "table" >
-	<thead class = "thead-light">
-		<tr>
-			<th></th>
-			<th>Nome</th>
-			<th>Aniversario</th>
-			<th>Sexo</th>
-			<th>CPF</th>
-			<th>E-mail</th>
-			<th>Telefone</th>
-		</tr>
+			</tbody>
+		</table>
 
-	</thead>
-<tbody>
-	<tr ng-class="{selecionado: user.selecionado}" ng-repeat = "user in listaUsuarios | filter:buscar| orderBy:'name': false " >
-		<td><input type="checkbox" ng-model ="user.selecionado"/></td>
-		<td>{{user.name | nome }}</td>
-		<td>{{user.dateBirth | date:'dd/MM/yyyy'}}</td>
-		<td>{{user.sex}}</td>
-		<td>{{user.cpf | cpf}}</td>
-		<td>{{user.email}}</td>
-		<td>{{user.phone | telefone}}</td>	
-		</td>
-	</tr>
-	<button class="btn btn-danger " ng-click= "apagarUser(listaUsuarios)" ng-disable= "isSelecionado(listaUsuarios)">Apagar</button>
-	<button class="btn btn-primary" ng-click="voltar()"> Voltar </button>
-</tbody>
+	</div>
+
 </div>
-
-</body>
-</html>

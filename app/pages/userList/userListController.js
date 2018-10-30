@@ -1,20 +1,29 @@
 (function () {
 	"use strict";
 	angular.module('bomControle')
-		.controller('userListController', ['$scope', '$location', function ($scope, $location) {
+		.controller('userListController', ['$scope', '$location','userHttpServices', function ($scope, $location,userHttpServices) {
+
 			$scope.listaUsuarios = JSON.parse(localStorage.getItem('usuario'));
 			console.log($scope.listaUsuarios);
 
-			$scope.selecionado = "selecionado";
-
-			$scope.apagarUser = function (list) {
-				$scope.listaUsuarios = list.filter(function (user) {
-					if (!user.selecionado) return user;
-				});
+			$scope.apagarUser = function (index) {
+				$scope.listaUsuarios.splice(index, 1);
+				localStorage.setItem('usuario', JSON.stringify($scope.listaUsuarios));
 			};
 
-			$scope.voltar = function () {
+		
+			$scope.novoCadastro = function () {
 				$location.path('/create-user');
 			};
+
+			$scope.resetUsuarios = function(){
+							 userHttpServices.getUsers().then(function(user){
+							localStorage.setItem('usuario', JSON.stringify(user.data));
+							$scope.listaUsuarios = JSON.parse(localStorage.getItem('usuario'));
+							console.log($scope.listaUsuarios);
+						});
+
+				
+			};
 		}]);
-})();
+		})();

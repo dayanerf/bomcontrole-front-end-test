@@ -3,7 +3,8 @@
     angular.module('bomControle')
     .directive('menuPrincipal', [function () {
         return {
-            templateUrl: "app/pages/navigation/nav.html"
+            templateUrl: "app/pages/navigation/nav.html",
+            
             
         };
     }]);

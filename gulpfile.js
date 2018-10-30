@@ -14,7 +14,7 @@ var paths = {
     './node_modules/bootstrap/dist/css/bootstrap.css',
     './node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
     './node_modules/bootstrap-daterangepicker/daterangepicker.css',
-    './app/**/**/**/*.css',
+    './app/**/**/**/*.css'
   ],
   appDependencesJs: [
     './node_modules/jquery/dist/jquery.js',
