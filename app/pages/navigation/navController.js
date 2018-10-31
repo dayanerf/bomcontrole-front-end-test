@@ -9,7 +9,6 @@
             function limparAtivo() {
                 for (var i = 0; i < navBarItem.length; i++) {
                     var item = navBarItem[i];
-                    console.log(item.classList);
 
                     for (var index = 0; index < item.classList.length; index++) {
                         if (item.classList[index] === 'active') {
@@ -24,7 +23,7 @@
                 _itemSelecionado.classList.add('active');
             }
 
-            if (localStorage.getItem("tabSelecionado") !== undefined || localStorage.getItem("tabSelecionado") !== null) {
+            if (localStorage.getItem("tabSelecionado") !== undefined && localStorage.getItem("tabSelecionado") !== null) {
                 var _itemIdSelecionado = localStorage.getItem("tabSelecionado");
                 setarAtivo(_itemIdSelecionado);
             } else {
