@@ -19,3 +19,12 @@ form .no-validate {
 	margin-left: 55px;
 	margin-right: 0;
 }
+.alert-danger{
+    margin-top: 5px;
+}
+
+.required:after{
+    content: " * ";
+    color: #a94442;
+}
+

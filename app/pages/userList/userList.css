@@ -2,10 +2,7 @@
  background: transparent;
 }
 
-.selecionado{
-	 background-color: #E2D1CE;
-	 font-weight: bold;
-}
+
 .btn-danger{
 	margin: 20px;
 }
@@ -20,12 +17,12 @@ margin-top: 20px;
 }
 
 .busca{
-	margin-top: 15px;
+	margin-top: 45px;
 	margin-left: 40px;
 }
 
 .btn-primary{
 
-	margin-top: 15px;
+	margin-top: 45px;
 
 }
