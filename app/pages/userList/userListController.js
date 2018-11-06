@@ -4,7 +4,6 @@
 		.controller('userListController', ['$scope', '$location', 'userHttpServices', '$rootScope', function ($scope, $location, userHttpServices, $rootScope) {
 			$rootScope.activetab = $location.url();
 			console.log($rootScope.activetab);
-
 			$scope.listaUsuarios = JSON.parse(localStorage.getItem('usuario'));
 			
 			$scope.apagarUser = function (index) {
