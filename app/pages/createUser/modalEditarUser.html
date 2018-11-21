@@ -1,0 +1,108 @@
+<form name="cadastroForm">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Alteração Cadastral</h3>
+    </div>
+    <div class="modal-body">
+        <fieldset>
+            <div class="col-sm-4">
+                <label for="nome" class="required">Nome</label>
+                <input id="nome" class="form-control" type="text" name="nome" ng-required="true" ng-model="user.name"
+                    ng-minlength="5" min="5">
+                <div ng-show=" cadastroForm.nome.$invalid && cadastroForm.nome.$dirty" class="alert alert-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Por gentileza digite um nome válido!
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label for="nasc" class="required">Nascimento</label>
+                <input id="nasc" class="form-control" type="text" name="nasc" ng-required="true" ng-model="user.dateBirth"
+                    ui-date-mask="DD/MM/YYYY">
+                <div ng-show="cadastroForm.nasc.$invalid && cadastroForm.nasc.$dirty " class="alert alert-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Erro:</span>
+                    Digite uma data válida.
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group checkbox-genero required">
+                    <label for="feminino" class="control-label">
+                        <input id="feminino" type="radio" name="sex" value="Female" ng-model="user.sex" ng-required="true"
+                            checked="true"> Feminino
+                    </label>
+                    <label for="masculino" class="control-label ">
+                        <input id="masculino" type="radio" name="sex" value="Male" ng-model="user.sex" ng-required="true">Masculino
+                    </label>
+                    <div ng-show="cadastroForm.sex.$invalid && cadastroForm.sex.$dirty" class="alert alert-danger">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Erro:</span>
+                        Selecione uma opção.
+                    </div>
+                </div>
+            </div>
+
+            <div class=" col-sm-2 ">
+                <div class="form-group">
+                    <label for="Cpf" class="required">CPF</label>
+                    <input id="Cpf" class="form-control" type="text" name="Cpf" ng-required="true" ng-model="user.cpf"
+                        ui-br-cpf-mask>
+                    <div ng-show="cadastroForm.Cpf.$invalid && cadastroForm.Cpf.$dirty" class="alert alert-danger">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Erro:</span>
+                        Digite um CPF válido.
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group col-sm-4">
+                <label class="required ">Email</label>
+                <input class="form-control" type="email" name="email" ng-required="true" ng-model="user.email"
+                    placeholder="email@exemplo.com">
+                <div ng-show="cadastroForm.email.$invalid && cadastroForm.email.$dirty" class="alert alert-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Erro:</span>
+                    Digite um e-mail válido.
+                </div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label class="required ">Telefone</label>
+                <input class="form-control" type="tel" name="telefone" ng-required="true" placeholder="(99)9999-9999"
+                    ng-model="user.phone" ui-br-phone-number>
+                <div ng-show="cadastroForm.telefone.$invalid && cadastroForm.telefone.$dirty" class="alert alert-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Erro:</span>
+                    Digite um telefone.
+                </div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label class="control-label ">Celular</label>
+                <input class="form-control" type="tel" name="celular" placeholder="(99) 99999-9999" ng-model="user.Celular"
+                    ui-br-phone-number>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="form-group col-sm-4">
+                <label class="control-label ">Lougradouro</label>
+                <input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
+            </div>
+            <div class="form-group col-sm-2">
+                <label class="control-label">CEP</label>
+                <input class="form-control" type="text" name="cep" placeholder="09000-000" ng-model="user.cep"
+                    ui-br-cep-mask>
+            </div>
+            <div class="form-group col-sm-1">
+                <label class="control-label ">Número</label>
+                <input class="form-control" type="number" name="numero" placeholder="Nº">
+            </div>
+            <div class="form-group col-sm-2">
+                <label class="control-label ">Bairro</label>
+                <input class="form-control" type="text" name="bairro" placeholder="Bairro">
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-model="salvar" ng-click="salvar(user)">Salvar</button>
+    </div>
+</form>

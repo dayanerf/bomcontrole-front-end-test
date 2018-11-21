@@ -21,10 +21,11 @@
 					<th scope="col">E-mail</th>
 					<th scope="col">Telefone</th>
 					<th scope="col"></th>
+					<th scope="col">
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in listaUsuarios| filter: buscar">
+				<tr ng-repeat="user in listaUsuarios| filter: buscar ">
 					<td></td>
 					<td>{{user.name}}</td>
 					<td>{{user.dateBirth | date:'dd/MM/yyyy'}}</td>
@@ -33,8 +34,14 @@
 					<td>{{user.email}}</td>
 					<td>{{user.phone | telefone}}</td>
 					<td>
-						<button type="button" class="btn btn-default" aria-label="true" ng-click="apagarUser($index)" ng-disable="isSelecionado(listaUsuarios)">
+						<button type="button" class="btn btn-default" aria-label="true" ng-click="apagarUser(user)">
 							<i class="glyphicon glyphicon-remove"></i>
+						</button>
+
+					</td>
+					<td>
+						<button ng-model = "editar" type="button" class="btn btn-default" aria-label="true" ng-click=" editarUser(user)">
+							<i class="glyphicon glyphicon-pencil"></i>
 						</button>
 
 					</td>
@@ -44,5 +51,5 @@
 		</table>
 
 	</div>
-
+	<!-- <tela-editar ng-if="aparece" dados="usuario"></tela-editar> -->
 </div>

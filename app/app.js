@@ -9,6 +9,7 @@
         'ngSanitize',
         'ui.utils.masks',
         'ui-notification',
+        'ngResource'
        
     ]);
 })();
