@@ -33,12 +33,17 @@
 					controller: function ($scope, $uibModalInstance, userHttpServices) {
 						$scope.user = usuario;
 
+						$scope.cancel = function () {
+							$uibModalInstance.dismiss('cancel');
+						  };
+
 						$scope.salvar = function (usuario) {
 							var retorno = userHttpServices.update(usuario);
 							if (retorno.msg === 'sucesso') {
 								$uibModalInstance.close(usuario);
-							}
+							}	
 						};
+					
 					}
 				});
 			};

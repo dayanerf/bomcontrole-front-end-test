@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body">
         <fieldset>
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <label for="nome" class="required">Nome</label>
                 <input id="nome" class="form-control" type="text" name="nome" ng-required="true" ng-model="user.name"
                     ng-minlength="5" min="5">
@@ -14,7 +14,7 @@
                     Por gentileza digite um nome válido!
                 </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                 <label for="nasc" class="required">Nascimento</label>
                 <input id="nasc" class="form-control" type="text" name="nasc" ng-required="true" ng-model="user.dateBirth"
                     ui-date-mask="DD/MM/YYYY">
@@ -24,7 +24,7 @@
                     Digite uma data válida.
                 </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-6">
                 <div class="form-group checkbox-genero required">
                     <label for="feminino" class="control-label">
                         <input id="feminino" type="radio" name="sex" value="Female" ng-model="user.sex" ng-required="true"
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class=" col-sm-2 ">
+            <div class=" col-sm-6 ">
                 <div class="form-group">
                     <label for="Cpf" class="required">CPF</label>
                     <input id="Cpf" class="form-control" type="text" name="Cpf" ng-required="true" ng-model="user.cpf"
@@ -55,7 +55,7 @@
             </div>
         </fieldset>
         <fieldset>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-12">
                 <label class="required ">Email</label>
                 <input class="form-control" type="email" name="email" ng-required="true" ng-model="user.email"
                     placeholder="email@exemplo.com">
@@ -65,7 +65,7 @@
                     Digite um e-mail válido.
                 </div>
             </div>
-            <div class="form-group col-sm-2">
+            <div class="form-group col-sm-6">
                 <label class="required ">Telefone</label>
                 <input class="form-control" type="tel" name="telefone" ng-required="true" placeholder="(99)9999-9999"
                     ng-model="user.phone" ui-br-phone-number>
@@ -75,7 +75,7 @@
                     Digite um telefone.
                 </div>
             </div>
-            <div class="form-group col-sm-2">
+            <div class="form-group col-sm-6">
                 <label class="control-label ">Celular</label>
                 <input class="form-control" type="tel" name="celular" placeholder="(99) 99999-9999" ng-model="user.Celular"
                     ui-br-phone-number>
@@ -83,26 +83,27 @@
         </fieldset>
 
         <fieldset>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-8">
                 <label class="control-label ">Lougradouro</label>
                 <input class="form-control" type="text" name="logradouro" placeholder="Rua, Av., Est.">
             </div>
-            <div class="form-group col-sm-2">
+            <div class="form-group col-sm-4">
                 <label class="control-label">CEP</label>
                 <input class="form-control" type="text" name="cep" placeholder="09000-000" ng-model="user.cep"
                     ui-br-cep-mask>
             </div>
-            <div class="form-group col-sm-1">
+            <div class="form-group col-sm-4">
                 <label class="control-label ">Número</label>
                 <input class="form-control" type="number" name="numero" placeholder="Nº">
             </div>
-            <div class="form-group col-sm-2">
+            <div class="form-group col-sm-6">
                 <label class="control-label ">Bairro</label>
                 <input class="form-control" type="text" name="bairro" placeholder="Bairro">
             </div>
         </fieldset>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer ">
         <button class="btn btn-primary" type="button" ng-model="salvar" ng-click="salvar(user)">Salvar</button>
+        <button class="btn btn-warning" type="button" ng-model="cancelar" ng-click="cancel()">Cancel</button>
     </div>
 </form>
