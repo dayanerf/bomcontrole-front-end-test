@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('bomControle')
-    .controller('createUserController', ['$scope', '$location', '$rootScope', function ($scope, $location, $rootScope, cadastroUser) {
+    .controller('createUserController', ['$scope', '$location', '$rootScope', function ($scope, $location, $rootScope, $uibModal) {
 
       $rootScope.activetab = $location.url();
       console.log($rootScope.activetab);
